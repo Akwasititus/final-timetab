@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       //TODO:  : singIn(),
       initialRoute: '/login',
       routes: {
-        SingIn.routeName : (context) => SingIn(),
+        SingIn.routeName : (context) => const SingIn(),
         MyHomePage.routeName : (context) => const MyHomePage(title: 'TIMETIB',),
       },
     );

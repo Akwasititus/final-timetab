@@ -3,6 +3,8 @@ import 'package:timeremender/cardviewdetails.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+import 'constants.dart';
+
 class TabControllers extends StatefulWidget {
   const TabControllers({Key? key}) : super(key: key);
 
@@ -65,46 +67,47 @@ class _TabControllersState extends State<TabControllers> {
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.4, //height of TabBarView
                 width: MediaQuery.of(context).size.height * 0.4, //width of TabBarView
-                decoration: const BoxDecoration(
-                    border: Border(top: BorderSide(color: Colors.green, width: 0.5))
+                decoration:  const BoxDecoration(
+                    border: Border(top: BorderSide(color: kGreenColor, width: 0.5))
                 ),
                 child: TabBarView(
                   children: [
                     //for(int i=0; i<=count; i++)
 
                     //new tab 1
-                    data !=  null?ThightusGridViewsForTabs(data: data, clour: Colors.green,): const Center(
-                      child:CircularProgressIndicator()//waiting for clor
+                    data !=  null?ThightusGridViewsForTabs(data: data, clour: kGreenColor,): const Center(
+                      child:CircularProgressIndicator()
                     ),
 
                     //new tab 2
-                    data !=  null?ThightusGridViewsForTabs(data: data, clour: Colors.green,): const Center(
+                    data !=  null?
+                    ThightusGridViewsForTabs(data: data, clour: kGreenColor,): const Center(
                         child:CircularProgressIndicator()
                     ),
 
                     //new tab 3
-                    data !=  null?ThightusGridViewsForTabs(data: data,clour: Colors.green,): const Center(
+                    data !=  null?ThightusGridViewsForTabs(data: data,clour: kGreenColor,): const Center(
                         child:CircularProgressIndicator()
                     ),
 
                     //new tab 4
-                    data !=  null?ThightusGridViewsForTabs(data: data,clour: Colors.green,): const Center(
+                    data !=  null?ThightusGridViewsForTabs(data: data,clour: kGreenColor,): const Center(
                         child:CircularProgressIndicator()
                     ),
 
 
                     //new tab 5
-                    data !=  null?ThightusGridViewsForTabs(data: data,clour: Colors.green,): const Center(
+                    data !=  null?ThightusGridViewsForTabs(data: data,clour: kGreenColor,): const Center(
                         child:CircularProgressIndicator()
                     ),
 
                     //new tab 6
-                    data !=  null?ThightusGridViewsForTabs(data: data,clour: Colors.green,): const Center(
+                    data !=  null?ThightusGridViewsForTabs(data: data,clour: kGreenColor,): const Center(
                         child:CircularProgressIndicator()
                     ),
 
                     //new tab 7
-                    data !=  null?ThightusGridViewsForTabs(data: data,clour: Colors.green,): const Center(
+                    data !=  null?ThightusGridViewsForTabs(data: data,clour: kGreenColor,): const Center(
                         child:CircularProgressIndicator()
                     ),
                   ],

@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:timeremender/Login/register.dart';
+import '../constants.dart';
 import '../home_page.dart';
 
 
 class SingIn extends StatefulWidget {
-  static const String routeName  = "/login";
+  static  String routeName  = logIn;
 
    const SingIn({Key? key}) : super(key: key);
 
@@ -14,9 +15,7 @@ class SingIn extends StatefulWidget {
 }
 
 class _SingInState extends State<SingIn> {
-  Color theWhiteColor = Colors.white;
-  Color myGreyColor = Colors.grey;
-  Color blackColor = Colors.black;
+
   final formKey = GlobalKey<FormState>();
 
   final _userEmailController = TextEditingController();
@@ -33,7 +32,7 @@ class _SingInState extends State<SingIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: blackColor,
+      backgroundColor: kBlackColor,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 90, horizontal: 15),
@@ -46,9 +45,9 @@ class _SingInState extends State<SingIn> {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon:  Icon(
+            icon:  const Icon(
               Icons.arrow_back_sharp,
-              color: theWhiteColor,
+              color: kTheWhiteColor,
               size: 25,
             ),
           ),
@@ -56,26 +55,11 @@ class _SingInState extends State<SingIn> {
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children:  [
-                  Text('Let\'s sign you in',style: TextStyle(
-                    color: theWhiteColor,
-                    fontSize: 45.4,
-                    fontWeight: FontWeight.w900,
-                    letterSpacing: 1.5,
-                  ),),
+                children:   [
+                  Text(niceText,style: kNiceTextStyle),
                   const SizedBox(height: 10.0,),
-                  Text('Welcome back',style: TextStyle(
-                    color: theWhiteColor,
-                    fontSize: 25.4,
-                    fontWeight: FontWeight.w900,
-                    letterSpacing: 2.1,
-                  ),),
-                  Text('You\'ve been missed!',style: TextStyle(
-                    color: theWhiteColor,
-                    fontSize: 25.4,
-                    fontWeight: FontWeight.w900,
-                    letterSpacing: 2.1,
-                  ),),
+                   Text(welcomeText,style: kWelcomeTextStyle),
+                   Text(youVeBeenMissed,style: kYouVeBeenMissedTextStyle),
                 ],
               ),
               const SizedBox(height: 50),
@@ -87,64 +71,50 @@ class _SingInState extends State<SingIn> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         TextFormField(
-                          style:  TextStyle(
-                              color: myGreyColor
-                          ),
-                          //cursorColor: myGreyColor,
+                          style:  kGreyColor,
                             controller: _userEmailController,
                             keyboardType: TextInputType.emailAddress,
-                            decoration:  InputDecoration(
-                              //fillColor: myGreyColor,
+                            decoration:   InputDecoration(
                               filled: true,
-                              focusColor: myGreyColor,
-                              focusedBorder: OutlineInputBorder(
+                              focusColor: kMyGreyColor,
+                              focusedBorder: const OutlineInputBorder(
                                 borderSide: BorderSide(
-                                    color:myGreyColor)
+                                    color:kMyGreyColor)
                               ),
-                              enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: myGreyColor)
+                              enabledBorder: const OutlineInputBorder(
+                                  borderSide: BorderSide(color: kMyGreyColor)
                               ),
-                              hintText: 'Enter Email',
-                              hintStyle: TextStyle(
-                                color: myGreyColor,
-                              ),
-                              labelText: 'Email',
-                              labelStyle: TextStyle(
-                                color: myGreyColor,
-                              ),
+                              hintText: enterEmail,
+                              hintStyle: kGreyColor,
+                              labelText: email,
+                              labelStyle: kGreyColor,
                             ),
                         ),
                         const SizedBox(height: 25),
                         TextFormField(
-                          style:  TextStyle(
-                              color: myGreyColor
-                          ),
+                          style:  kGreyColor,
                             obscureText: _obscureText,
                             controller: _userPasswordController,
                             keyboardType: TextInputType.visiblePassword,
                             decoration:  InputDecoration(
-                              fillColor: myGreyColor,
-                              focusColor: myGreyColor,
-                              focusedBorder:  OutlineInputBorder(
-                                  borderSide: BorderSide(color: myGreyColor)
+                              fillColor: kMyGreyColor,
+                              focusColor: kMyGreyColor,
+                              focusedBorder:  const OutlineInputBorder(
+                                  borderSide: BorderSide(color: kMyGreyColor)
                               ),
-                              enabledBorder:  OutlineInputBorder(
-                                  borderSide: BorderSide(color: myGreyColor)
+                              enabledBorder:  const OutlineInputBorder(
+                                  borderSide: BorderSide(color: kMyGreyColor)
                               ),
-                              hintText: 'Enter Password',
-                              hintStyle:  TextStyle(
-                                color: myGreyColor,
-                              ),
-                              labelText: 'Password',
+                              hintText: enterPassword,
+                              hintStyle:  kGreyColor,
+                              labelText: password,
                               suffixIcon:  IconButton(
-                                disabledColor: Colors.blueGrey,
+                                disabledColor: kBlueGreyColor,
                                 icon:Icon(_obscureText ? Icons.visibility:Icons.visibility_off,),
                                 onPressed: _togglePasswordStatus,
-                                color: myGreyColor,
+                                color: kMyGreyColor,
                               ),
-                              labelStyle:  TextStyle(
-                                color: myGreyColor,
-                              ),
+                              labelStyle:  kGreyColor,
                             ),
                         ),
                       ]
@@ -160,12 +130,7 @@ class _SingInState extends State<SingIn> {
           children: [
             Row(
               children:  [
-                 Text('Don\'t have an Account?',style: TextStyle(
-                  color: theWhiteColor,
-                  fontSize: 15.4,
-                  fontWeight: FontWeight.w900,
-                  letterSpacing: 2.1,
-                ),),
+                  Text(dontHaveAnAccount,style: kDontHaveAnAccountTextStyle),
                 const SizedBox(width: 10.4),
                 GestureDetector(
                   onTap: () {
@@ -175,12 +140,7 @@ class _SingInState extends State<SingIn> {
                           MaterialPageRoute(builder: (context) => const RegisterUser()));
                     });
                   },
-                  child: const Text('Register',style: TextStyle(
-                    color: Colors.blue,
-                    fontSize: 20.4,
-                    fontWeight: FontWeight.w900,
-                    letterSpacing: 2.1,
-                  ),),
+                  child:  Text(register,style: kRegisterTextStyle),
                 ),
 
               ],
@@ -195,13 +155,10 @@ class _SingInState extends State<SingIn> {
                   Navigator.pushNamed(
                       context,  MyHomePage.routeName);
                 });
-              }, child:  Text('Sign In',style: TextStyle(
-              color: blackColor,
-              letterSpacing: 1.5,
-            ),
+              }, child:   Text(signIn,style: kSignedInTextStyle
             ),
               style: ElevatedButton.styleFrom(
-                  primary: theWhiteColor,
+                  primary: kTheWhiteColor,
                   padding: const EdgeInsets.all(10),
                   textStyle: const TextStyle(
                     fontSize: 30,

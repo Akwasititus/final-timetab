@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'changeschedule.dart';
+import 'constants.dart';
 
 class mycard extends StatefulWidget {
   final  myIcon;
@@ -36,7 +37,7 @@ class _mycardState extends State<mycard> {
             setState(() {
               Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const changeSchedule()));
+                  MaterialPageRoute(builder: (context) => const ChangeSchedule()));
 
               //Navigator.pop(context);
             },
@@ -48,9 +49,9 @@ class _mycardState extends State<mycard> {
               //mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Icon((widget.myIcon), size:35, color: Colors.green),
-                Text(widget.cardNames, style: const TextStyle(fontSize: 22,color: Colors.grey)),
-                Text(widget.cardDiscription, style: const TextStyle(fontSize: 22,color: Colors.blueGrey)),
+                Icon((widget.myIcon), size:35, color: kGreenColor),
+                Text(widget.cardNames, style: const TextStyle(fontSize: 22,color: kMyGreyColor)),
+                Text(widget.cardDiscription, style: const TextStyle(fontSize: 22,color: kBlueGreyColor)),
               ],
             ),
           ),

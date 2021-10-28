@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'changeschedule.dart';
+import 'constants.dart';
 
 class bottomSheet extends StatefulWidget {
   const bottomSheet({Key? key}) : super(key: key);
@@ -25,7 +26,7 @@ void displayModalBottomSheet(BuildContext context) {
       builder: (context) => Container(
           height: MediaQuery.of(context).size.height * 0.77,
           decoration: const BoxDecoration(
-            color: Colors.white,
+            color: kTheWhiteColor,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(25.0),
               topRight: Radius.circular(25.0),
@@ -229,7 +230,7 @@ void displayModalBottomSheet(BuildContext context) {
                           setState(() {
                             Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => const changeSchedule()));
+                                MaterialPageRoute(builder: (context) => const ChangeSchedule()));
                           });
                           //open Change Shedule Screen
                         }, child: const Text('Add Schedule'),

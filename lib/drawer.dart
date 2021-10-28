@@ -4,6 +4,8 @@ import 'package:timeremender/Login/signin.dart';
 import 'package:timeremender/utils/constants.dart';
 import 'package:timeremender/utils/constants.dart';
 
+import 'constants.dart';
+
 class MenuDrawer extends StatefulWidget {
   const MenuDrawer({Key? key}) : super(key: key);
 
@@ -22,26 +24,21 @@ class _MenuDrawerState extends State<MenuDrawer> {
         padding: EdgeInsets.zero,
         children: [
 
-          const UserAccountsDrawerHeader(
-            accountName: Text('Akwasi Titus'),
-            accountEmail: Text('iakwasititus@gmail.com'),
-            currentAccountPicture: CircleAvatar(
-              backgroundImage: AssetImage('Assets/bra.png'),
-              foregroundColor: Colors.white,
+           UserAccountsDrawerHeader(
+            accountName: Text(akwasiTitus),
+            accountEmail: Text(myEmail),
+            currentAccountPicture: const CircleAvatar(
+              backgroundImage:AssetImage('Assets/bra.png'),
+              foregroundColor: kTheWhiteColor,
               radius: 35,
             ),
 
           ),
 
           ListTile(
-            hoverColor: Colors.green,
-            leading: const Icon((Icons.person_outline_rounded), color: Colors.blueGrey),
-            title: const Text('Profile', style: TextStyle(
-              color: Colors.black54,
-              fontSize: 15.4,
-              fontWeight: FontWeight.w900,
-              letterSpacing: 2.1,
-            )),
+            hoverColor: kGreenColor,
+            leading: const Icon((Icons.person_outline_rounded), color: kBlueGreyColor),
+            title:  Text(profile, style: nameTextStyle),
             onTap: () {
               setState(() {
                 Navigator.push(
@@ -52,14 +49,9 @@ class _MenuDrawerState extends State<MenuDrawer> {
             },
           ),
           ListTile(
-            leading:  const Icon((Icons.message_outlined), color: Colors.blueGrey),
-            hoverColor: Colors.green,
-            title: const Text('Messages', style: TextStyle(
-              color: Colors.black54,
-              fontSize: 15.4,
-              fontWeight: FontWeight.w900,
-              letterSpacing: 2.1,
-            )),
+            leading:  const Icon((Icons.message_outlined), color: kBlueGreyColor),
+            hoverColor: kGreenColor,
+            title:  Text(messages, style: nameTextStyle),
             onTap: () {
               setState(() {
                 Navigator.pop(context);
@@ -68,14 +60,9 @@ class _MenuDrawerState extends State<MenuDrawer> {
           ),
 
           ListTile(
-            hoverColor: Colors.green,
-            leading:  const Icon((Icons.waves_outlined), color: Colors.blueGrey),
-            title:   const Text('Activity', style: TextStyle(
-              color: Colors.black54,
-              fontSize: 15.4,
-              fontWeight: FontWeight.w900,
-              letterSpacing: 2.1,
-            )),
+            hoverColor: kGreenColor,
+            leading:  const Icon((Icons.waves_outlined), color: kBlueGreyColor),
+            title:    Text(activity, style:nameTextStyle),
             onTap: () {
               setState(() {
                 //...codes here.......
@@ -85,14 +72,9 @@ class _MenuDrawerState extends State<MenuDrawer> {
           ),
 
           ListTile(
-            hoverColor: Colors.green,
-            leading:  const Icon((Icons.list_rounded), color: Colors.blueGrey),
-            title:   const Text('List', style: TextStyle(
-              color: Colors.black54,
-              fontSize: 15.4,
-              fontWeight: FontWeight.w900,
-              letterSpacing: 2.1,
-            )),
+            hoverColor: kGreenColor,
+            leading:  const Icon((Icons.list_rounded), color: kBlueGreyColor),
+            title:    Text(list, style: nameTextStyle),
             onTap: () {
               setState(() {
                 //...codes here.......
@@ -102,14 +84,9 @@ class _MenuDrawerState extends State<MenuDrawer> {
           ),
 
           ListTile(
-            hoverColor: Colors.green,
-            leading:  const Icon((Icons.report_gmailerrorred_sharp), color: Colors.blueGrey),
-            title:   const Text('Report', style: TextStyle(
-              color: Colors.black54,
-              fontSize: 15.4,
-              fontWeight: FontWeight.w900,
-              letterSpacing: 2.1,
-            )),
+            hoverColor: kGreenColor,
+            leading:  const Icon((Icons.report_gmailerrorred_sharp), color: kBlueGreyColor),
+            title:    Text(report, style:nameTextStyle),
             onTap: () {
               setState(() {
                 //...codes here.......
@@ -119,14 +96,9 @@ class _MenuDrawerState extends State<MenuDrawer> {
           ),
 
           ListTile(
-            hoverColor: Colors.green,
-            leading:  const Icon((Icons.flash_on), color: Colors.blueGrey),
-            title:   const Text('Statistics', style: TextStyle(
-              color: Colors.black54,
-              fontSize: 15.4,
-              fontWeight: FontWeight.w900,
-              letterSpacing: 2.1,
-            )),
+            hoverColor: kGreenColor,
+            leading:  const Icon((Icons.flash_on), color: kBlueGreyColor),
+            title:    Text(statistics, style: nameTextStyle),
             onTap: () {
               setState(() {
                 //...codes here.......
@@ -136,14 +108,9 @@ class _MenuDrawerState extends State<MenuDrawer> {
           ),
 
           ListTile(
-            hoverColor: Colors.green,
-            leading:  const Icon((Icons.outbond_outlined), color: Colors.blueGrey),
-            title:   const Text('Sign Out', style: TextStyle(
-              color: Colors.black54,
-              fontSize: 15.4,
-              fontWeight: FontWeight.w900,
-              letterSpacing: 2.1,
-            )),
+            hoverColor: kGreenColor,
+            leading:  const Icon((Icons.outbond_outlined), color: kBlueGreyColor),
+            title:    Text(signOut, style: nameTextStyle),
             onTap: () {
               setState(() {
                //TODO: Constants.prefs.setBool("singIn", false);
@@ -153,18 +120,13 @@ class _MenuDrawerState extends State<MenuDrawer> {
           ),
 
           const Divider(
-            color: Colors.blueGrey,
+            color: kBlueGreyColor,
           ),
 
           ListTile(
-            hoverColor: Colors.green,
-            leading:  const Icon((Icons.share_outlined), color: Colors.blueGrey),
-            title:   const Text('Tell a Friend', style: TextStyle(
-              color: Colors.black54,
-              fontSize: 15.4,
-              fontWeight: FontWeight.w900,
-              letterSpacing: 2.1,
-            )),
+            hoverColor: kGreenColor,
+            leading:  const Icon((Icons.share_outlined), color: kBlueGreyColor),
+            title:    Text(tellAFriend, style: nameTextStyle),
             onTap: () {
               setState(() {
                 //...codes here.......
@@ -174,14 +136,9 @@ class _MenuDrawerState extends State<MenuDrawer> {
           ),
 
           ListTile(
-            hoverColor: Colors.green,
-            leading:  const Icon((Icons.help_outline_sharp), color: Colors.blueGrey),
-            title:   const Text('Help and Feedback', style: TextStyle(
-              color: Colors.black54,
-              fontSize: 15.4,
-              fontWeight: FontWeight.w900,
-              letterSpacing: 2.1,
-            )),
+            hoverColor: kGreenColor,
+            leading:  const Icon((Icons.help_outline_sharp), color: kBlueGreyColor),
+            title:    Text(helpAndFeedback, style: nameTextStyle),
             onTap: () {
               setState(() {
                 //...codes here.......
